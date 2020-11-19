@@ -24,7 +24,7 @@ public class Main
         System.out.println(corteFeminino.getValor());
         
         
-        Cliente cliente = new Cliente(1, "Juliana", 'F', "998661736", "Av. Silvio Rugani 1275");
+        Cliente cliente = new Cliente(nome, nome, 0, nome);
         System.out.println(cliente.getNome());
     }
     

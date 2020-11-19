@@ -5,6 +5,12 @@
  */
 package View;
 
+import Controller.LoginController;
+import Model.DAO.Banco;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author 55349
@@ -12,12 +18,16 @@ package View;
 public class Login extends javax.swing.JFrame
 {
 
+    private final LoginController controller;
+
     /**
      * Creates new form Login
      */
     public Login()
     {
         initComponents();
+        controller = new LoginController(this);
+        Banco.inicia();
     }
 
     /**
@@ -30,20 +40,55 @@ public class Login extends javax.swing.JFrame
     private void initComponents()
     {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jButtonEntrar = new javax.swing.JButton();
+        textSenha = new javax.swing.JPasswordField();
+        textUsuario = new javax.swing.JTextField();
+        jLabelSenha = new javax.swing.JLabel();
+        jLabelUsuario = new javax.swing.JLabel();
+        jLabelLoginPainel = new javax.swing.JLabel();
+        jLabelLoginFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/painel-login.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, 570, 530));
+        jButtonEntrar.setText("Entrar");
+        jButtonEntrar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButtonEntrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 620, 220, 40));
+        getContentPane().add(textSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 710, 370, 30));
+        getContentPane().add(textUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 570, 370, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Logo.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1340, 1060));
+        jLabelSenha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelSenha.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSenha.setText("Senha");
+        getContentPane().add(jLabelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 670, -1, -1));
+
+        jLabelUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelUsuario.setText("Usuário");
+        getContentPane().add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, -1, -1));
+
+        jLabelLoginPainel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/painel-login.png"))); // NOI18N
+        getContentPane().add(jLabelLoginPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 570, 530));
+
+        jLabelLoginFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Logo.jpg"))); // NOI18N
+        getContentPane().add(jLabelLoginFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1340, 1060));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButtonEntrarActionPerformed
+    {//GEN-HEADEREND:event_jButtonEntrarActionPerformed
+        // executa quando clico no botão;
+        
+        this.controller.fizTarefa();
+        
+    }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,7 +129,41 @@ public class Login extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButtonEntrar;
+    private javax.swing.JLabel jLabelLoginFundo;
+    private javax.swing.JLabel jLabelLoginPainel;
+    private javax.swing.JLabel jLabelSenha;
+    private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JPasswordField textSenha;
+    private javax.swing.JTextField textUsuario;
     // End of variables declaration//GEN-END:variables
+
+    public void exibeMensagem(String mensagem)
+    {
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
+
+    public JPasswordField getTextSenha()
+    {
+        return textSenha;
+    }
+
+    public void setTextSenha(JPasswordField textSenha)
+    {
+        this.textSenha = textSenha;
+    }
+
+    public JTextField getTextUsuario()
+    {
+        return textUsuario;
+    }
+
+    public void setTextUsuario(JTextField textUsuario)
+    {
+        this.textUsuario = textUsuario;
+    }
+    
+    
+    
+    
 }
