@@ -1,0 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package View;
+
+import Model.Servico;
+
+/**
+ *
+ * @author 55349
+ */
+public class Main
+{
+    
+    public static void main(String[] args){
+        String nome = "Juliana";
+        System.out.println(nome);
+        
+        Servico corteFeminino = new Servico(1, "Corte Feminino", 50);
+        System.out.println(corteFeminino.getDescricao());
+        System.out.println(corteFeminino.getValor());
+    }
+    
+}
