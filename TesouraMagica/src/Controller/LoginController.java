@@ -42,6 +42,7 @@ public class LoginController
             // navegar para menu principal
             MenuPrincipal menu = new MenuPrincipal();
             menu.setVisible(true);
+            this.view.dispose();
         }
         else{
             view.exibeMensagem("Usuário ou senha inválidos!");
