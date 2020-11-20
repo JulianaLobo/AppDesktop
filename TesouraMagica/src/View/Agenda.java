@@ -44,8 +44,8 @@ public class Agenda extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        jLabelPainel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabelPainel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -116,14 +116,14 @@ public class Agenda extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 70, 30));
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 240, 30));
 
-        jLabelPainel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Agenda-PainelFundo.png"))); // NOI18N
-        jLabelPainel.setPreferredSize(new java.awt.Dimension(1200, 900));
-        getContentPane().add(jLabelPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 800, 480));
-
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Data");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 70, 30));
+
+        jLabelPainel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Agenda-PainelFundo.png"))); // NOI18N
+        jLabelPainel.setPreferredSize(new java.awt.Dimension(1200, 900));
+        getContentPane().add(jLabelPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 800, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
