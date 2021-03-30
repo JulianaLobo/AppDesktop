@@ -1,2 +1,2 @@
-# App Desktop Agendamento Salão de Beleza
+# App Desktop Agendamento 
 Aplicativo Desktop em Java 
